@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MiniStore</title>
+    <link rel="icon" href="./img/apple2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="js/all.min.js">
+    <link rel="stylesheet" href="js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="js/bootstrap.bundle.min.js.map">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,260,260i,600,600i,700,700i|Poppins:300,300i,400,400i,260,260i,600,600i,700,700i" rel="stylesheet">
+</head>
+<body class="g1">
+    <section class="vh-100">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5 r2"><img src="./img/apple2.png" alt="" width="22%" height="60px">Create an account</h2>
+                                <form action="register.php" method="post">
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label r2" for="form3Example1cg">Your Name</label>
+                                        <input name="fn" type="text" id="first-name" class="form-control form-control-lg" placeholder="Enter Your Name" required/>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label r2" for="form3Example3cg">Your Email</label>
+                                        <input name="email" type="email" id="email" class="form-control form-control-lg" placeholder="Enter Your Email" required/>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label r2" for="form3Example4cg">Password</label>
+                                        <input name="pass" type="password" id="pass" class="form-control form-control-lg" placeholder="Enter Password" required/>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label r2" for="form3Example4cdg">Repeat your password</label>
+                                        <input name="cpass" type="password" id="pass2" class="form-control form-control-lg" placeholder="Enter Confirm Password" required/>
+                                    </div>
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" required/>
+                                        <label class="form-check-label r2" for="form2Example3g">
+                                            I agree all statements in Terms of service
+                                        </label>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-block btn-lg gradient-custom-4 text-white r1" id="submit">Register</button>
+                                    </div>
+                                    <p class="text-center text-muted mt-5 mb-0 r2">Have already an account? <a href="login.html" class="r3"><u>Login here</u></a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<script>
+  let f_n = document.getElementById("first-name");
+  let em_ail = document.getElementById("email");
+  let pass_word = document.getElementById("pass");
+  let password_confirmation = document.getElementById("pass2");
+  let reg_btn = document.getElementById("submit");
+
+  reg_btn.addEventListener("click", function (e) {
+    /*                e.preventDefault();
+     */ if (
+      f_n.value == "" ||
+      
+      em_ail.value == "" ||
+      pass_word.value == ""
+    ) {
+      alert("Please Fill Data");
+    } else {
+      localStorage.setItem("first_name", f_n.value);
+      
+      localStorage.setItem("email", em_ail.value);
+      localStorage.setItem("password", pass_word.value);
+      setTimeout(() => {
+        /*             window.location = "register.php";
+         */
+        
+      }, 1000);
+    }
+  });
+</script>
+   </body>
+
+</html>
